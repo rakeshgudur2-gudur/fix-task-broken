@@ -1,0 +1,3 @@
+Skipping image OS validation for hb__81ccb2191f058d5ef848800162a583d4: docker inspect returned 1
+Collecting main service artifacts
+Trial log-report__PriQ9vr failed: No reward file found at jobs\2026-07-15__16-20-33\log-report__PriQ9vr\verifier\reward.txt or jobs\2026-07-15__16-20-33\log-report__PriQ9vr\verifier\reward.json

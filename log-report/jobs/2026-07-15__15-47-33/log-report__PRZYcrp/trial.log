@@ -1,0 +1,82 @@
+Trial log-report__PRZYcrp failed: Docker compose command failed for environment log-report. Command: docker compose --project-name log-report__przycrp__env --project-directory C:\Users\hp\Downloads\fix-task-broken\log-report\environment -f C:\Users\hp\AppData\Local\Temp\tmp80fskneu\log-report__PRZYcrp__env-docker-compose-resources.json -f C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker-compose-build.yaml -f C:\Users\hp\AppData\Local\Temp\tmpvwaieker\docker-compose-mounts.json build. Return code: 1. Stdout:  Image log-report__przycrp__env-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 611B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 286B done
+#2 WARN: InvalidDefaultArgInFrom: Default value for ARG public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:<approved-digest> results in empty or invalid base image name (line 1)
+#2 DONE 0.0s
+Dockerfile:1
+
+--------------------
+
+   1 | >>> FROM public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:<approved-digest>
+
+   2 |     
+
+   3 |     RUN pip install --no-cache-dir pytest==8.4.1 pytest-json-ctrf==0.3.5
+
+--------------------
+
+failed to solve: failed to parse stage name "public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:<approved-digest>": invalid reference format
+
+. Stderr: None. 
+Collecting main service artifacts
+Failed to download artifact '/app/report.json' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\trial\trial.py", line 350, in run
+    await self._prepare()
+  File "C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\trial\trial.py", line 379, in _prepare
+    await self._setup_agent_environment()
+  File "C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\trial\trial.py", line 1097, in _setup_agent_environment
+    await self._start_agent_environment()
+  File "C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\trial\trial.py", line 1103, in _start_agent_environment
+    await asyncio.wait_for(
+  File "C:\Users\hp\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 865, in start
+    await self._run_docker_compose_command(["build"])
+  File "C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 631, in _run_docker_compose_command
+    raise RuntimeError(
+RuntimeError: Docker compose command failed for environment log-report. Command: docker compose --project-name log-report__przycrp__env --project-directory C:\Users\hp\Downloads\fix-task-broken\log-report\environment -f C:\Users\hp\AppData\Local\Temp\tmp80fskneu\log-report__PRZYcrp__env-docker-compose-resources.json -f C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker-compose-build.yaml -f C:\Users\hp\AppData\Local\Temp\tmpvwaieker\docker-compose-mounts.json build. Return code: 1. Stdout:  Image log-report__przycrp__env-main Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 611B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 286B done
+#2 WARN: InvalidDefaultArgInFrom: Default value for ARG public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:<approved-digest> results in empty or invalid base image name (line 1)
+#2 DONE 0.0s
+Dockerfile:1
+
+--------------------
+
+   1 | >>> FROM public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:<approved-digest>
+
+   2 |     
+
+   3 |     RUN pip install --no-cache-dir pytest==8.4.1 pytest-json-ctrf==0.3.5
+
+--------------------
+
+failed to solve: failed to parse stage name "public.ecr.aws/docker/library/python:3.13-slim-bookworm@sha256:<approved-digest>": invalid reference format
+
+. Stderr: None. 
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\trial\artifact_handler.py", line 330, in _download_artifact
+    await source_env.service_download_file(
+  File "C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 1025, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 1010, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker_unix.py", line 185, in download_file
+    await self._env._run_docker_compose_command(
+  File "C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 631, in _run_docker_compose_command
+    raise RuntimeError(
+RuntimeError: Docker compose command failed for environment log-report. Command: docker compose --project-name log-report__przycrp__env --project-directory C:\Users\hp\Downloads\fix-task-broken\log-report\environment -f C:\Users\hp\AppData\Local\Temp\tmp80fskneu\log-report__PRZYcrp__env-docker-compose-resources.json -f C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker-compose-build.yaml -f C:\Users\hp\AppData\Local\Temp\tmpvwaieker\docker-compose-mounts.json cp main:/app/report.json jobs\2026-07-15__15-47-33\log-report__PRZYcrp\artifacts\app\report.json. Return code: 1. Stdout: no container found for service "main"
+. Stderr: None. 

@@ -1,0 +1,20 @@
+Skipping image OS validation for hb__81ccb2191f058d5ef848800162a583d4: docker inspect returned 1
+Collecting main service artifacts
+Failed to download artifact '/app/report.json' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\trial\artifact_handler.py", line 330, in _download_artifact
+    await source_env.service_download_file(
+  File "C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 1025, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 1010, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker_unix.py", line 185, in download_file
+    await self._env._run_docker_compose_command(
+  File "C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 631, in _run_docker_compose_command
+    raise RuntimeError(
+RuntimeError: Docker compose command failed for environment log-report. Command: docker compose --project-name log-report__blmfhme__env --project-directory C:\Users\hp\Downloads\fix-task-broken\log-report\environment -f C:\Users\hp\AppData\Local\Temp\tmpanpu5cve\log-report__BLmfhME__env-docker-compose-resources.json -f C:\Users\hp\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker-compose-build.yaml -f C:\Users\hp\AppData\Local\Temp\tmpc6a1kut5\docker-compose-mounts.json cp main:/app/report.json jobs\2026-07-15__16-21-18\log-report__BLmfhME\artifacts\app\report.json. Return code: 1. Stdout:  log-report__blmfhme__env-main-1 Copying log-report__blmfhme__env-main-1:/app/report.json to jobs\2026-07-15__16-21-18\log-report__BLmfhME\artifacts\app\report.json
+Error response from daemon: Could not find the file /app/report.json in container 9a2ba397dbffd6f63aaac0db34f90c3bc8cd85b03a6a91e1379f7b4c9d910f21
+. Stderr: None. 
+Trial log-report__BLmfhME failed: No reward file found at jobs\2026-07-15__16-21-18\log-report__BLmfhME\verifier\reward.txt or jobs\2026-07-15__16-21-18\log-report__BLmfhME\verifier\reward.json
+Exception RewardFileNotFoundError is in exclude_exceptions, not retrying
+Not retrying trial because the exception is not in include_exceptions or the maximum number of retries has been reached
